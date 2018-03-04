@@ -1,6 +1,6 @@
 <h5>Home Page</h5>
 <table class="room-view-list">
-<tr class="home-view" ng-repeat="room in home.rooms ">
-<td>{{room}}</td>
+<tr class="home-view" ng-repeat="room in home.rooms track by room.$value">
+<td>{{room.$value}}</td>
 </tr>
 </table>
