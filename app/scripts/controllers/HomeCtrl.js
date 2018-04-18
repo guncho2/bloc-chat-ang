@@ -1,9 +1,33 @@
+
+//How can I display my queried
+//Rooms in the view?*
 (function() {
-    function HomeCtrl(Room) {
+  //Create a controller and
+  //associate it with the home
+  // template in a $state. Inject
+  // the Room service so that you
+  // can /assign the array of objects
+//retrieved by the allmethod to a
+// $scope variable. Display the
+// rooms in the template using
+//ngrepeat
+    function HomeCtrl(Room, Message, $uibModal) {
       this.rooms = Room.all;
+      this.currentRoom = null;
+      this.addRoom = function() {
+            $uibModal.open({
+                templateUrl: '/templates/modal.html',
+                size: 'sm',
+                controller: 'ModalCtrl as modal'
+            });
+        }
+        this.setCurrentRoom = function (room) {
+            this.currentRoom = room;
+            this.messages = Message.getByRoomId(this.currentRoom.$id);
+        }
     }
 
     angular
         .module('blocChatAng')
-        .controller('HomeCtrl', ['Room', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
 })();

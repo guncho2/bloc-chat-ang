@@ -37,7 +37,21 @@
         <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
+<!--There needs to be a form that you can use to submit
+ the new room's data using  ngClick or ngSubmit. Presenting
+  a modal is an unobtrusive way to trigger a form on
+  the interface. Use UI Bootstrap's $uibModal service
+  to define a method for toggling a modal on the
+  frontend. To fully integrate a UI Bootstrap modal:
+Include the UI Bootstrap library via a <script> tag on
+ index.html. We will be using version 2.5.0.  -->
+
+        <!-- AngularUI Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
 <script>
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyABcSiPfduU-TrDDUf3tON4D0DqLNiqHxQ",
@@ -53,6 +67,7 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/ModalCtrl.js"></script>
 
 </body>
 </html>
