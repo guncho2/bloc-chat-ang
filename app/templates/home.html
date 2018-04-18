@@ -1,5 +1,10 @@
 <h5>Home Page</h5>
 <table class="room-view-list">
+  <div class="sidebar-header">
+        <h1 class="sidebar-title">Bloc Chat</h1>
+        <button type="button" class="new-room" ng-click="home.addRoom()">New Room</button>
+        <p class="room-name" ng-click="home.setCurrentRoom(room)">{{ room.name }}</p>
+    </div>
 <tr class="home-view" ng-repeat="room in home.rooms track by room.$value">
 <td>{{room.$value}}</td>
 </tr>
