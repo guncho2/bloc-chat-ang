@@ -5,7 +5,7 @@
         <button type="button" class="new-room" ng-click="home.addRoom()">New Room</button>
         <p class="room-name" ng-click="home.setCurrentRoom(room)">{{ room.name }}</p>
     </div>
-<tr class="home-view" ng-repeat="room in home.rooms track by room.$value">
-<td>{{room.$value}}</td>
+<tr class="home-view" ng-repeat="room in home.rooms">
+<td>{{room.name}}</td>
 </tr>
 </table>

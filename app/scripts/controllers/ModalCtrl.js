@@ -12,6 +12,6 @@
       }
 
   angular
-      .module('blocChat')
+      .module('blocChatAng')
       .controller('ModalCtrl', ['Room', '$uibModalInstance', ModalCtrl]);
 })();

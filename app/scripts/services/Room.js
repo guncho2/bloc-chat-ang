@@ -38,7 +38,7 @@
 //service and a foundation for decoupled
 //code
     Room.all = rooms;
-    rooms.add = function (room){
+    Room.add = function (room){
       rooms.$add(room);
     };
     return Room;
