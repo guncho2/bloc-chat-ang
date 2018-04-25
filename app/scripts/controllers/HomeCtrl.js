@@ -11,7 +11,7 @@
 // $scope variable. Display the
 // rooms in the template using
 //ngrepeat
-    function HomeCtrl(Room, $uibModal) {
+    function HomeCtrl(Room, Message, $uibModal) {
       this.rooms = Room.all;
       this.currentRoom = null;
       this.addRoom = function() {
@@ -25,9 +25,14 @@
             this.currentRoom = room;
             this.messages = Message.getByRoomId(this.currentRoom.$id);
         }
+        this.sendMessage = function () {
+            this.newMessage.roomId = this.currentRoom.$id;
+            this.newMessage.username = this.currentUser;
+            Message.send(this.newMessage);
+        }
     }
 
     angular
         .module('blocChatAng')
-        .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
 })();
