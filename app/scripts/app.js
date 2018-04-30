@@ -20,7 +20,7 @@
      }
 
      angular
-         .module('blocChatAng', ['ui.router', 'ui.bootstrap', 'firebase', 'ngCookies'])
+         .module('blocChatAng', ['ui.router', 'ui.bootstrap', 'firebase'])
          .config(config);
 
  })();
