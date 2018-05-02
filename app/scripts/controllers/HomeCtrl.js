@@ -14,7 +14,7 @@
     function HomeCtrl(Room, Message, $uibModal) {
       this.rooms = Room.all;
       this.currentRoom = null;
-      //this.currentUser = $cookies.get('blocChatCurrentUser');
+    //this.currentUser = $cookies.get('blocChatCurrentUser');
 
       this.addRoom = function() {
             $uibModal.open({
@@ -25,13 +25,17 @@
         }
         this.setCurrentRoom = function (room) {
             this.currentRoom = room;
+            console.log(this.currentRoom);
             this.messages = Message.getByRoomId(this.currentRoom.$id);
         }
+
+
         this.sendMessage = function () {
            this.newMessage.roomId = this.currentRoom.$id;
             this.newMessage.username = this.currentUser;
             Message.send(this.newMessage);
-        }
+       }
+
     }
 
     angular
