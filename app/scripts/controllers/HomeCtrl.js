@@ -14,6 +14,8 @@
     function HomeCtrl(Room, Message, $uibModal) {
       this.rooms = Room.all;
       this.currentRoom = null;
+      this.currentUser = "TestUser";
+      
     //this.currentUser = $cookies.get('blocChatCurrentUser');
 
       this.addRoom = function() {
